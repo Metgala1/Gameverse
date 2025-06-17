@@ -1,0 +1,89 @@
+
+.heroSection {
+    background-image: url('../assets/home.png');
+    width: 100%;
+    height: 100vh;
+    color: pink;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.firstDiv{
+    flex: 1;
+    text-align: center;
+    padding: 10%;
+
+}
+
+.secondDiv{
+    flex: 1.5;
+    text-align: center;
+    
+}
+
+.gameVersButton{
+     padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #00f0ff, #d400ff);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  text-shadow: 0 0 10px #00f0ff;
+  box-shadow:
+    0 0 10px #00f0ff,
+    0 0 10px #d400ff,
+    0 0 20px #d400ff,
+    0 0 20px #d400ff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+   
+
+}
+
+.gameversetitle {
+  font-size: 48px;
+  font-weight: 900;
+  color: #d400ff;
+  text-transform: uppercase;
+  font-family: 'Orbitron', sans-serif;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 5%;
+}
+.hottestgamecontainer{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+
+}
+
+.gamecard{
+    background-color: rgba(10,10,30,0.7);
+    border-radius: 15px;
+    overflow: hidden;
+    width: 180px;
+    box-shadow: 0 0 15px rgba(0,255,255,0.5), 0 0 30px rgba(148, 0 , 211, 0.5);
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 668px) {
+    .gameversetitle{
+        font-size: 36px;
+        margin-bottom: 10%;
+    }
+    .gameVersButton{
+        padding: 8px 20px;
+        font-size: 16px;
+    }
+    .secondDiv{
+        flex: 2;
+    }
+}

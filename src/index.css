@@ -1,0 +1,10 @@
+body{
+    background-color: rgba(0, 0, 0, 0.877);
+    width: 100ww;
+    height: auto;
+    color: white;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
