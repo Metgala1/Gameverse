@@ -1,11 +1,13 @@
-body{
-    background-color: rgba(0, 0, 0, 0.877);
-    width: 100ww;
-    height: auto;
-    color: white;
-    background-image: url('./assets/home.png');
-    background-size: cover;
-    background-position: center;
+body {
+  background-image: url('./assets/home.png'); 
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  background-color: black; 
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Rajdhani', sans-serif;
 }
 *{
     box-sizing: border-box;

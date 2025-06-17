@@ -1,29 +1,47 @@
-import styles from  '../styles/Home.module.css';
-
+import styles from '../styles/Home.module.css';
+import { useGameContext } from './GameContext';
 
 const Home = () => {
+  const { game, loading, error } = useGameContext();
 
-    return(
-        <div className={styles.heroSection}>
-            <div className={styles.firstDiv}> 
-                 <h1 className={styles.gameversetitle}>Welcome to GameVerse</h1>
-                 <button className={styles.gameVersButton} type='button'> Enter the Gameverse</button>
+  const myFilterGames = game
+    ? game.filter((g) =>
+        ['Grand Theft Auto V', 'The Witcher 3: Wild Hunt', 'Red Dead Redemption 2'].includes(g.name)
+      )
+    : [];
 
-            </div>
-            <div className={styles.secondDiv}>
-                <h2 className={styles.gameversetitle}>Hottest Games</h2>
-                <div className={styles.hottestgamecontainer}>
-                   
-                    
-                    
-                    
+  return (
+    <div className={styles.homeDiv}>
+    <div className={styles.heroSection}>
+      <div className={styles.firstDiv}>
+        <h1 className={styles.gameversetitle}>Welcome to GameVerse</h1>
+        <button className={styles.gameVersButton} type="button">
+          Enter the Gameverse
+        </button>
+      </div>
 
-                </div>
+      <div className={styles.secondDiv}>
+        <h2 className={styles.gameversetitle}>Hottest Games</h2>
+        <div className={styles.hottestgamecontainer}>
+          {loading && <p>Loading...</p>}
+          {error && <p>Error loading games</p>}
 
-            </div>
+          {myFilterGames.length > 0 &&
+            myFilterGames.map((game) => (
+              <div key={game.id} className={styles.gamecard}>
+                <img
+                  src={game.background_image}
+                  alt={game.name}
+                  className={styles.homeImg}
+                />
+                <h3 className={styles.h2}>{game.name}</h3>
+              </div>
+            ))}
         </div>
-    )
-    
-}
+      </div>
+    </div>
+    </div>
+  );
+};
 
 export default Home;

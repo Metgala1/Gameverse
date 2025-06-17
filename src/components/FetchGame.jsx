@@ -9,7 +9,6 @@ const useGame = (url) => {
         fetch(url)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data);
                 setGame(data.results);
             })
             .catch((err) => {
