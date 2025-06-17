@@ -3,6 +3,9 @@ body{
     width: 100ww;
     height: auto;
     color: white;
+    background-image: url('./assets/home.png');
+    background-size: cover;
+    background-position: center;
 }
 *{
     box-sizing: border-box;
