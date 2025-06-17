@@ -86,4 +86,8 @@
     .secondDiv{
         flex: 2;
     }
+    .heroSection{
+        background-size: cover;
+        background-position: center;
+    }
 }
