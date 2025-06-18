@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  padding-bottom: 10rem;
 }
 
 .heroSection {
@@ -12,7 +13,7 @@
   max-width: 1200px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 10rem;
   color: #fff;
 }
 
@@ -20,7 +21,6 @@
 .firstDiv {
   text-align: center;
   padding: 2rem;
-  
 }
 
 /* Button */
@@ -38,7 +38,9 @@
     0 0 10px #d400ff,
     0 0 20px #d400ff,
     0 0 20px #d400ff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   cursor: pointer;
   margin-top: 1rem;
 }
@@ -59,7 +61,7 @@
   text-transform: uppercase;
   font-family: 'Orbitron', sans-serif;
   margin-bottom: 1rem;
-   font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron', sans-serif;
 }
 
 /* Games container */
@@ -84,12 +86,14 @@
   width: 240px;
   height: auto;
   padding-bottom: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow:
     0 0 12px rgba(0, 255, 255, 0.2),
     0 0 30px rgba(212, 0, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.08);
-   font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', cursive;
   font-size: 12px;
   color: #00f0ff;
 }
@@ -120,12 +124,11 @@
 
 .gamecard:hover {
   transform: scale(1.05);
-  box-shadow: 
+  box-shadow:
     0 0 25px rgba(0, 255, 255, 0.4),
     0 0 40px rgba(212, 0, 255, 0.35),
     inset 0 0 15px rgba(255, 255, 255, 0.05);
 }
-
 
 .homeImg {
   width: 100%;
@@ -138,6 +141,38 @@
   font-weight: 600;
   margin: 1rem;
   color: #fff;
+}
+.homeDiv {
+  position: relative;
+  z-index: 1;
+}
+.logoDiv {
+  width: 150px;
+  height: 150px;
+}
+.logoImg {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow:
+    0 0 10px rgba(0, 240, 255, 0.5),
+    0 0 20px rgba(212, 0, 255, 0.5);
+  transition: transform 0.3s ease;
+}
+.logoImg:hover {
+  transform: rotate(180deg);
+  box-shadow:
+    0 0 20px rgba(0, 240, 255, 0.7),
+    0 0 30px rgba(212, 0, 255, 0.7);
+  transition:
+    transform 0.9s ease-in-out,
+    box-shadow 0.9s ease;
+}
+.imgLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 /* Responsive */
@@ -162,7 +197,10 @@
   .h2 {
     font-size: 14px;
   }
-  .firstDiv{
+  .firstDiv {
     padding: 1rem;
+  }
+  .heroSection {
+    gap: 2rem;
   }
 }

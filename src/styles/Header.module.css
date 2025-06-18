@@ -1,0 +1,114 @@
+.storeContainer {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0e0e1c;
+  color: white;
+}
+.headerLogoDiv {
+  width: 50px;
+  height: 50px;
+}
+.headerLogoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.storeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: rgba(20, 20, 40, 0.9);
+  border-bottom: 1px solid #00f0ff;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #d400ff;
+  cursor: pointer;
+}
+
+.searchBar {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 1.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.cartIcon {
+  font-size: 1.5rem;
+  color: #00f0ff;
+}
+
+.cartCount {
+  background-color: #d400ff;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.8rem;
+}
+
+.searchWrapper {
+  position: relative;
+  width: 300px;
+}
+
+.searchBar {
+  width: 100%;
+  padding: 10px 40px 10px 15px; /* space for icon on right */
+  border: 2px solid #d400ff;
+  border-radius: 20px;
+  font-size: 16px;
+  background-color: white;
+  color: #fff;
+  outline: none;
+  transition:
+    width 0.9s ease,
+    box-shadow 0.9s ease,
+    border-color 0.9s ease;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #d400ff;
+  pointer-events: none;
+  font-size: 16px;
+}
+.searchBar:focus {
+  width: 110%; /* slightly expand */
+  box-shadow:
+    0 0 10px #d400ff,
+    0 0 20px #00f0ff;
+  border-color: #00f0ff;
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+}
