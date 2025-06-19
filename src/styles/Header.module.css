@@ -111,4 +111,8 @@
   .logo {
     font-size: 1.5rem;
   }
+  .searchBar{
+    max-width: 200px;
+    max-height: 2rem;
+  }
 }
