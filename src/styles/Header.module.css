@@ -1,7 +1,5 @@
 .storeContainer {
   width: 100%;
-  min-height: 100vh;
-  background-color: #0e0e1c;
   color: white;
 }
 .headerLogoDiv {
@@ -111,8 +109,12 @@
   .logo {
     font-size: 1.5rem;
   }
-  .searchBar{
+  .searchBar {
     max-width: 200px;
     max-height: 2rem;
+  }
+  .storeContainer{
+    position: sticky;
+    top: 0;
   }
 }
