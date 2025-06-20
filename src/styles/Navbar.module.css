@@ -65,7 +65,8 @@ ul{
 
 @media  screen and (max-width: 750px) {
     .navbar{
-        width: 40vw;
+        width: 230px;
+        z-index: -1;
     }
     
 }
