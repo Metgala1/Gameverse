@@ -13,7 +13,10 @@ function Store() {
         <h1>Welcome to the Game Store</h1>
         <p>Explore our collection of games!</p>
       </div>
+      <div className={styles.navcontainer}>
       {navVisible && <Navbar navVisible={navVisible} setNavVisible={setNavVisible} />}
+      </div>
+     
     </div>
   );
 }

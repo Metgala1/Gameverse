@@ -74,13 +74,23 @@ ul{
     align-self: flex-end;
     border: none;
     border-radius: 50%;
+    z-index: 9999;
+    background: rgba(110, 108, 108, 0.4);
+    font-size: 1rem;
     
 }
 
 @media  screen and (max-width: 750px) {
     .navbar{
         width: 230px;
-        z-index: -1;
+        max-height: 70vh;
+        overflow: auto;
+        margin-left: 0.2rem;
+    }
+    .closeBtn{
+        position: sticky;
+        top: 0.5rem;
+        right: 0.5rem;
     }
     
 }
