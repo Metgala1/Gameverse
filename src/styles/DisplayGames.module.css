@@ -1,0 +1,84 @@
+/* Main container for game list */
+.store{
+    width: 100%;
+    max-height: 100vh;
+    background-color: red;
+}
+
+.gamelist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 2rem; 
+  
+}
+
+/* Game card */
+.gameItem {
+  background-color: #1c1c2b;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  color: white;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  width: 200px;
+}
+
+.game-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 255, 255, 0.2);
+}
+
+/* Game image */
+.game-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* Game title */
+.game-item h3 {
+  font-size: 1.1rem;
+  margin: 0.75rem 1rem 0.25rem;
+}
+
+/* Rating text */
+.game-item p {
+  font-size: 0.9rem;
+  margin: 0 1rem 1rem;
+  color: #aaa;
+}
+
+/* Mobile-specific tweaks */
+.game-item.mobile {
+  font-size: 0.95rem;
+}
+
+.gameImg{
+    width: 200px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+@media screen and (max-width: 600px) {
+  .gamelist {
+    padding: 0.3rem;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    column-gap: 2rem;
+    padding-right: 2rem;
+  }
+
+  .gameitem img {
+    height: 120px;
+  }
+
+  .gameitem h3 {
+    font-size: 1rem;
+  }
+
+  .gameitem p {
+    font-size: 0.85rem;
+  }
+}
