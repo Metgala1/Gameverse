@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { HiMenu } from 'react-icons/hi';
 
 function Store() {
-     const [navVisible, setNavVisible] = useState(true);
+     const [navVisible, setNavVisible] = useState(false);
 
   return (
     <div className="store">

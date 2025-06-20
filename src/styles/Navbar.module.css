@@ -1,7 +1,8 @@
 .navbar {
   display: flex;
-  gap: 2rem;
-  background: rgba(255, 255, 255, 0.4);
+  flex-direction: column;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
@@ -10,21 +11,32 @@
   font-size: larger;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  flex-direction: column;
-
+  padding: 1rem;
 }
 
+
 .nav-item {
-  position: relative;
   list-style: none;
   color: #fff;
   cursor: pointer;
   font-weight: 500;
   transition: color 0.3s ease;
+  position: relative;
 }
-ul{
-    padding: 1rem;
-    list-style-type: none;
+
+.nav-item:hover {
+  color: #00ffff;
+}
+
+.icon {
+  margin-right: 0.5rem;
+}
+
+
+ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
 }
 
 .nav-item:hover {
@@ -39,7 +51,7 @@ ul{
 .dropdown {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 100%;
   background: rgba(10, 10, 10, 0.9);
   border-radius: 8px;
   padding: 0.5rem 0;
@@ -47,9 +59,8 @@ ul{
   display: none;
   flex-direction: column;
   min-width: 180px;
-  
+  z-index: 2000;
 }
-
 .dropdown-item {
   padding: 0.5rem 1rem;
   color: #eee;
@@ -67,32 +78,69 @@ ul{
   display: flex;
 }
 
-.closeBtn{
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    align-self: flex-end;
-    border: none;
-    border-radius: 50%;
-    z-index: 9999;
-    background: rgba(110, 108, 108, 0.4);
-    font-size: 1rem;
-    
+.closeBtn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(110, 108, 108, 0.4);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: auto;
+  z-index: 9999;
 }
 
-@media  screen and (max-width: 750px) {
-    .navbar{
-        width: 230px;
-        max-height: 70vh;
-        overflow: auto;
-        margin-left: 0.2rem;
-        position: fixed;
-        top: 20%;
-    }
-    .closeBtn{
-        position: sticky;
-        top: 0.5rem;
-        right: 0.5rem;
-    }
-    
+.toggleNav {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  z-index: 10000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 750px) {
+  .storeContent {
+    padding: 0.5rem;
+  }
+
+  .navbar {
+    width: 230px;
+    max-height: 60vh;
+    overflow-y: auto;
+    position: fixed;
+    top: 20%;
+    left: 0;
+  }
+
+  .closeBtn {
+    position: sticky;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .navcontainer {
+    max-height: 80vh;
+    overflow: auto;
+    margin-left: 0;
+  }
+}
+
+/* Optional: Smooth Transitions */
+.navbar, .gamesContainer, .toggleNav {
+  transition: all 0.3s ease;
 }
