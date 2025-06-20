@@ -1,10 +1,13 @@
 import navItems from "./NavListItems"
-import styles from '../styles/Navbar.module.css'
+import styles from '../styles/Navbar.module.css';
+import { MdClose } from 'react-icons/md';
 
-function Navbar() {
+
+function Navbar({ navVisible, setNavVisible }) {
     
     return (
        <div className={styles.navbar}>
+        <button onClick={() => setNavVisible(!navVisible)} className={styles.closeBtn}><MdClose className="close-icon" /></button>
         <ul>
           {navItems.map((item, index) => (
             <li key={index} className="navitem">

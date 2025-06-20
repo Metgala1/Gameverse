@@ -1,7 +1,11 @@
 import Header from './Header';
 import styles from '../styles/Store.module.css';
 import Navbar from './Navbar';
+import { useState } from 'react';
+
 function Store() {
+     const [navVisible, setNavVisible] = useState(true);
+
   return (
     <div className="store">
       <Header />
@@ -9,7 +13,7 @@ function Store() {
         <h1>Welcome to the Game Store</h1>
         <p>Explore our collection of games!</p>
       </div>
-      <Navbar />
+      {navVisible && <Navbar navVisible={navVisible} setNavVisible={setNavVisible} />}
     </div>
   );
 }
