@@ -45,5 +45,9 @@
     display: block;
     text-align: center;
   }
+  .gamesContainer{
+    width: 100%;
+    height: fit-content;
+  }
 
 }
