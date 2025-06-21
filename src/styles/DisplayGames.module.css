@@ -61,6 +61,13 @@
     object-fit: cover;
     border-radius: 12px 12px 0 0;
 }
+.error, .loading{
+    color: white;
+    position: absolute;
+    top: 50%;
+    right: 30%;
+    left: 40%;
+}
 
 @media screen and (max-width: 600px) {
   .gamelist {

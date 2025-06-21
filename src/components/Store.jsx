@@ -25,7 +25,7 @@ function Store() {
       </div>
        {!navVisible && (
         <button onClick={() => setNavVisible(!navVisible)} className={styles.toggleNav} type='button'>
-         <HiMenu className="hamburger-icon" />
+         <HiMenu className="hamburgericon" />
       </button>
        )}
     </div>

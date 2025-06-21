@@ -22,11 +22,15 @@ const Home = () => {
           <div className={styles.imgLogo}>
             {!isMobile && (
               <div className={styles.logoDiv}>
-                <img
+                <svg
                   className={styles.logoImg}
-                  src="/logo.png"
-                  alt="GameVerse Logo"
-                />
+                  width="100%"
+                  height="100"
+                  viewBox="0 0 200 100"
+                  preserveAspectRatio="xMidYMid meet"
+                >
+                  <image href="/logo.png" width="100%" height="100%" />
+                </svg>
               </div>
             )}
             <h1 className={styles.gameversetitle}>Welcome to GameVerse</h1>
@@ -47,11 +51,19 @@ const Home = () => {
             {myFilterGames.length > 0 &&
               myFilterGames.map((game) => (
                 <div key={game.id} className={styles.gamecard}>
-                  <img
-                    src={game.background_image}
-                    alt={game.name}
+                  <svg
                     className={styles.homeImg}
-                  />
+                    width="100%"
+                    height="160"
+                    viewBox="0 0 320 160"
+                    preserveAspectRatio="xMidYMid slice"
+                  >
+                    <image
+                      href={game.background_image}
+                      width="100%"
+                      height="100%"
+                    />
+                  </svg>
                   <h3 className={styles.h2}>{game.name}</h3>
                 </div>
               ))}
@@ -63,3 +75,4 @@ const Home = () => {
 };
 
 export default Home;
+

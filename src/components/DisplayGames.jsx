@@ -6,8 +6,8 @@ function DisplayGames() {
 
   return (
     <div>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error loading games: {error.message}</p>}
+      {loading && <p className={styles.loading}>Loading...</p>}
+      {error && <p className={styles.error}>Error loading games: {error.message}</p>}
 
       <div className={styles.gamelist}>
         {game && game.map((item) => (
@@ -15,7 +15,19 @@ function DisplayGames() {
             key={item.id}
             className={`${styles.gameItem} ${isMobile ? styles.mobile : ''}`}
           >
-            <img className={styles.gameImg} src={item.background_image} alt={item.name} />
+            <svg
+              className={styles.gameImg}
+              width="100%"
+              height="100%"
+              viewBox="0 0 320 160"
+              preserveAspectRatio="xMidYMid slice"
+            >
+              <image
+                href={item.background_image}
+                width="100%"
+                height="100%"
+              />
+            </svg>
             <h3>{item.name}</h3>
             <p>Rating: {item.rating}</p>
           </div>
@@ -26,3 +38,4 @@ function DisplayGames() {
 }
 
 export default DisplayGames;
+
