@@ -22,15 +22,7 @@ const Home = () => {
           <div className={styles.imgLogo}>
             {!isMobile && (
               <div className={styles.logoDiv}>
-                <svg
-                  className={styles.logoImg}
-                  width="100%"
-                  height="100"
-                  viewBox="0 0 200 100"
-                  preserveAspectRatio="xMidYMid meet"
-                >
-                  <image href="/logo.png" width="100%" height="100%" />
-                </svg>
+                <img className={styles.logoImg} src="./logo.png" alt="GameVerse logo" />
               </div>
             )}
             <h1 className={styles.gameversetitle}>Welcome to GameVerse</h1>
