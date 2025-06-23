@@ -5,7 +5,7 @@ function DisplayGames() {
   const { game, loading, error, isMobile } = useGameContext();
 
   return (
-    <div>
+    <div className={styles.gamesContainer}>
       {loading && <p className={styles.loading}>Loading...</p>}
       {error && <p className={styles.error}>Error loading games: {error.message}</p>}
 

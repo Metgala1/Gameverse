@@ -6,7 +6,7 @@ import { useGameContext } from './GameContext';
 
 function Header() {
   const [cartCount, setCartCount] = useState(0);
-  const { isMobile } = useGameContext();
+  const { isMobile} = useGameContext();
 
   return (
     <div className={styles.storeContainer}>

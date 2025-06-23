@@ -4,9 +4,12 @@ import Navbar from './Navbar';
 import { useState } from 'react';
 import { HiMenu } from 'react-icons/hi';
 import DisplayGames from './DisplayGames';
+import { useGameContext } from './GameContext';
 
 function Store() {
      const [navVisible, setNavVisible] = useState(false);
+     const {isMobile} = useGameContext()
+    
 
   return (
     <div className={styles.store}>
@@ -16,11 +19,10 @@ function Store() {
         <h1>Welcome to the Game Store</h1>
         <p>Explore our collection of games!</p>
       </div>
-      <div className={styles.navcontainer}>
+      <div className={styles.navandgamediv}>
       {navVisible && <Navbar navVisible={navVisible} setNavVisible={setNavVisible} />}
-      <div className={styles.gamesContainer}>
+      {!isMobile && <Navbar />}
         <DisplayGames />
-      </div>
       </div>
       </div>
        {!navVisible && (

@@ -11,7 +11,7 @@ const navItems = [
     ],
   },
   {
-    title: "Top",
+    title: "⭐Top",
     children: [
       { title: "Best of the year" },
       { title: "Popular in 2024" },

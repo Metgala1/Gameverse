@@ -12,6 +12,12 @@
   padding: 2rem; 
   
 }
+.gamesContainer {
+  background-color: rgba(20, 20, 40, 0.9);
+  width: 100%;
+  z-index: 1;
+  position: relative;
+}
 
 /* Game card */
 .gameItem {
