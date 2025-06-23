@@ -1,4 +1,4 @@
-.storeContainer {
+.headerContainer {
   width: 100%;
   color: white;
 }
@@ -22,7 +22,7 @@
 .storeHeader {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 1rem 2rem;
   background-color: rgba(20, 20, 40, 0.9);
   border-bottom: 1px solid #00f0ff;
@@ -113,7 +113,7 @@
     max-width: 200px;
     max-height: 2rem;
   }
-  .storeContainer{
+  .headerContainer {
     position: sticky;
     top: 0;
   }

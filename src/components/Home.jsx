@@ -22,7 +22,11 @@ const Home = () => {
           <div className={styles.imgLogo}>
             {!isMobile && (
               <div className={styles.logoDiv}>
-                <img className={styles.logoImg} src="./logo.png" alt="GameVerse logo" />
+                <img
+                  className={styles.logoImg}
+                  src="./logo.png"
+                  alt="GameVerse logo"
+                />
               </div>
             )}
             <h1 className={styles.gameversetitle}>Welcome to GameVerse</h1>
@@ -67,4 +71,3 @@ const Home = () => {
 };
 
 export default Home;
-

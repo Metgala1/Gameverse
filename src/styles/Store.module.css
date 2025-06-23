@@ -3,33 +3,42 @@
   text-align: center;
   padding: 1rem;
   background-color: black;
+  flex: 1;
+}
+.store {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .navandgamediv {
   position: relative;
-  z-index: 2;
   display: flex;
+  flex: 1;
+  overflow: hidden;
 }
-.flexStore{
-    display: flex;
-    flex-direction: column;
+.flexStore {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
-@media  screen and (max-width: 750px) {
+@media screen and (max-width: 750px) {
   .storeContent {
     padding: 0;
   }
-  .storeContent p{
+  .storeContent p {
     margin: 0;
   }
-  .storeContent h1{
+  .storeContent h1 {
     margin: 0;
   }
-  .navandgamediv{
+  .navandgamediv {
     width: 100%;
     max-height: 80vh;
     overflow: auto;
   }
-  .toggleNav{
+  .toggleNav {
     width: 50px;
     height: 50px;
     position: fixed;
@@ -45,14 +54,13 @@
     display: flex;
     justify-content: center;
   }
-  .gamesContainer{
+  .gamesContainer {
     width: 100%;
     height: fit-content;
   }
-  .hamburger{
+  .hamburger {
     align-self: center;
     font-size: larger;
     font-weight: bolder;
   }
-
 }

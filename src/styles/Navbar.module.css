@@ -16,7 +16,6 @@
   align-self: center;
 }
 
-
 .navitem {
   list-style: none;
   color: #fff;
@@ -27,11 +26,9 @@
   margin-bottom: 1rem;
 }
 
-
 .icon {
   margin-right: 0.5rem;
 }
-
 
 ul {
   padding: 0;
@@ -141,6 +138,8 @@ ul {
 }
 
 /* Optional: Smooth Transitions */
-.navbar, .gamesContainer, .toggleNav {
+.navbar,
+.gamesContainer,
+.toggleNav {
   transition: all 0.3s ease;
 }
