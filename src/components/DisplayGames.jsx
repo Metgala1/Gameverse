@@ -45,7 +45,11 @@ function DisplayGames() {
               <p>Released Date: {item.released}</p>
               <p>Playtime: {item.playtime} hours</p>
               <button
-                className={styles.cartBtn}
+                className={`${styles.cartBtn} ${
+                  cart.some((g) => g.id === item.id)
+                    ? styles.remove
+                    : styles.add
+                }`}
                 onClick={() =>
                   cart.some((g) => g.id === item.id)
                     ? removeFromCart(item)

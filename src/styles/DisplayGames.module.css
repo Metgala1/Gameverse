@@ -80,6 +80,35 @@
   text-align: center;
 }
 
+.cartBtn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Add to Cart = Green */
+.add {
+  background-color: #28a745;
+  color: white;
+}
+
+.add:hover {
+  background-color: #218838;
+}
+
+/* Remove from Cart = Red */
+.remove {
+  background-color: #dc3545;
+  color: white;
+}
+
+.remove:hover {
+  background-color: #c82333;
+}
+
 @media screen and (max-width: 600px) {
   .gamelist {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
