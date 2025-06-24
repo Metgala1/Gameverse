@@ -2,12 +2,19 @@ import { useGameContext } from './GameContext';
 import styles from '../styles/DisplayGames.module.css';
 
 function DisplayGames() {
-  const { game, loading, error, isMobile, selectedGenre, addToCart } = useGameContext();
+  const {
+    game,
+    loading,
+    error,
+    isMobile,
+    selectedGenre,
+    cart,
+    addToCart,
+    removeFromCart,
+  } = useGameContext();
 
   const myGame = game
-    ? game.filter((g) =>
-        g.genres.some((genre) => genre.slug === selectedGenre)
-      )
+    ? game.filter((g) => g.genres.some((genre) => genre.slug === selectedGenre))
     : [];
 
   return (
@@ -30,11 +37,7 @@ function DisplayGames() {
               viewBox="0 0 320 160"
               preserveAspectRatio="xMidYMid slice"
             >
-              <image
-                href={item.background_image}
-                width="100%"
-                height="100%"
-              />
+              <image href={item.background_image} width="100%" height="100%" />
             </svg>
             <div className={styles.gameinfo}>
               <h3>{item.name}</h3>
@@ -43,9 +46,15 @@ function DisplayGames() {
               <p>Playtime: {item.playtime} hours</p>
               <button
                 className={styles.cartBtn}
-                onClick={() => addToCart(item)}
+                onClick={() =>
+                  cart.some((g) => g.id === item.id)
+                    ? removeFromCart(item)
+                    : addToCart(item)
+                }
               >
-                Add to Cart
+                {cart.some((g) => g.id === item.id)
+                  ? 'Remove from Cart'
+                  : 'Add to Cart'}
               </button>
             </div>
           </div>
@@ -56,4 +65,3 @@ function DisplayGames() {
 }
 
 export default DisplayGames;
-

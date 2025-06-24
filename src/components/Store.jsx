@@ -10,7 +10,6 @@ function Store() {
   const [navVisible, setNavVisible] = useState(false);
   const { isMobile } = useGameContext();
 
-
   return (
     <div className={styles.store}>
       <Header />

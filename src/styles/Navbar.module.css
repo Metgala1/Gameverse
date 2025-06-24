@@ -71,7 +71,7 @@ ul {
 .navitem:hover .dropdown {
   display: flex;
 }
-.listbtn{
+.listbtn {
   background-color: black;
   border: none;
   color: white;

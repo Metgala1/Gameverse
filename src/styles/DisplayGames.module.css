@@ -75,7 +75,7 @@
   right: 30%;
   left: 40%;
 }
-.gameinfo{
+.gameinfo {
   padding: 0.5rem 1rem;
   text-align: center;
 }
@@ -100,7 +100,7 @@
   .gameItem {
     width: 180px;
   }
-  .gameinfo{
+  .gameinfo {
     font-size: 0.9rem;
   }
 }
