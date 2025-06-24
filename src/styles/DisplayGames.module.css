@@ -75,6 +75,10 @@
   right: 30%;
   left: 40%;
 }
+.gameinfo{
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
 
 @media screen and (max-width: 600px) {
   .gamelist {
@@ -95,5 +99,8 @@
   }
   .gameItem {
     width: 180px;
+  }
+  .gameinfo{
+    font-size: 0.9rem;
   }
 }

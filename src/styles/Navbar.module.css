@@ -46,9 +46,6 @@ ul {
 
 /* Dropdown menu */
 .dropdown {
-  position: absolute;
-  top: 100%;
-  left: 100%;
   background: rgba(10, 10, 10, 0.9);
   border-radius: 8px;
   padding: 0.5rem 0;
@@ -73,6 +70,11 @@ ul {
 /* Show dropdown on hover */
 .navitem:hover .dropdown {
   display: flex;
+}
+.listbtn{
+  background-color: black;
+  border: none;
+  color: white;
 }
 
 .closeBtn {

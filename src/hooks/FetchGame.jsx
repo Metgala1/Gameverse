@@ -4,7 +4,7 @@ const useGame = (url) => {
   const [game, setGame] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
+  
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())

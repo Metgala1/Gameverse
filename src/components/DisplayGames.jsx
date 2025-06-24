@@ -2,7 +2,13 @@ import { useGameContext } from './GameContext';
 import styles from '../styles/DisplayGames.module.css';
 
 function DisplayGames() {
-  const { game, loading, error, isMobile } = useGameContext();
+  const { game, loading, error, isMobile, selectedGenre, addToCart } = useGameContext();
+
+  const myGame = game
+    ? game.filter((g) =>
+        g.genres.some((genre) => genre.slug === selectedGenre)
+      )
+    : [];
 
   return (
     <div className={styles.gamesContainer}>
@@ -12,32 +18,42 @@ function DisplayGames() {
       )}
 
       <div className={styles.gamelist}>
-        {game &&
-          game.map((item) => (
-            <div
-              key={item.id}
-              className={`${styles.gameItem} ${isMobile ? styles.mobile : ''}`}
+        {myGame.map((item) => (
+          <div
+            key={item.id}
+            className={`${styles.gameItem} ${isMobile ? styles.mobile : ''}`}
+          >
+            <svg
+              className={styles.gameImg}
+              width="100%"
+              height="100%"
+              viewBox="0 0 320 160"
+              preserveAspectRatio="xMidYMid slice"
             >
-              <svg
-                className={styles.gameImg}
+              <image
+                href={item.background_image}
                 width="100%"
                 height="100%"
-                viewBox="0 0 320 160"
-                preserveAspectRatio="xMidYMid slice"
-              >
-                <image
-                  href={item.background_image}
-                  width="100%"
-                  height="100%"
-                />
-              </svg>
+              />
+            </svg>
+            <div className={styles.gameinfo}>
               <h3>{item.name}</h3>
               <p>Rating: {item.rating}</p>
+              <p>Released Date: {item.released}</p>
+              <p>Playtime: {item.playtime} hours</p>
+              <button
+                className={styles.cartBtn}
+                onClick={() => addToCart(item)}
+              >
+                Add to Cart
+              </button>
             </div>
-          ))}
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
 export default DisplayGames;
+

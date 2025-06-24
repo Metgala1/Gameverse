@@ -1,15 +1,17 @@
 import navItems from './NavListItems';
 import styles from '../styles/Navbar.module.css';
 import { MdClose } from 'react-icons/md';
+import { useGameContext } from './GameContext';
 
 function Navbar({ navVisible, setNavVisible }) {
+    const {setSelectedGenre} = useGameContext()
   return (
     <div className={styles.navbar}>
       <button
         onClick={() => setNavVisible(!navVisible)}
         className={styles.closeBtn}
       >
-        <MdClose className={styles.closeicon} />
+        {"X"}
       </button>
       <ul>
         {navItems.map((item, index) => (
@@ -21,9 +23,9 @@ function Navbar({ navVisible, setNavVisible }) {
             {item.children && (
               <ul className={styles.dropdown}>
                 {item.children.map((child, i) => (
-                  <li key={i} className={styles.dropdownitem}>
+                 <li key={i} className={styles.dropdownitem}><button onClick={() => setSelectedGenre(child.title.toLowerCase())} className={styles.listbtn}>
                     {child.title}
-                  </li>
+                  </button></li>
                 ))}
               </ul>
             )}

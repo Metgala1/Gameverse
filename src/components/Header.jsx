@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 import { useGameContext } from './GameContext';
 
 function Header() {
-  const [cartCount, setCartCount] = useState(0);
-  const { isMobile } = useGameContext();
+  const { isMobile, cart } = useGameContext();
 
   return (
     <div className={styles.headerContainer}>
@@ -35,7 +34,7 @@ function Header() {
 
         <div className={styles.cart}>
           <FaShoppingCart className={styles.cartIcon} />
-          <span className={styles.cartCount}>{cartCount}</span>
+          <span className={styles.cartCount}>{cart.length}</span>
         </div>
       </header>
     </div>
