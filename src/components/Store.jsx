@@ -5,10 +5,11 @@ import { useState } from 'react';
 import { HiMenu } from 'react-icons/hi';
 import DisplayGames from './DisplayGames';
 import { useGameContext } from './GameContext';
+import CartItems from './CartItems';
 
 function Store() {
   const [navVisible, setNavVisible] = useState(false);
-  const { isMobile } = useGameContext();
+  const { isMobile, cartVisibility, setCartVisibility } = useGameContext();
 
   return (
     <div className={styles.store}>
@@ -25,6 +26,7 @@ function Store() {
           {!isMobile && <Navbar />}
           <DisplayGames />
         </div>
+        {cartVisibility ? <CartItems /> : null}
       </div>
       {!navVisible && (
         <button

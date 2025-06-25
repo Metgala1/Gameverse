@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useGameContext } from './GameContext';
 
 function Header() {
-  const { isMobile, cart } = useGameContext();
+  const { isMobile, cart, setCartVisibility } = useGameContext();
 
   return (
     <div className={styles.headerContainer}>
@@ -31,7 +31,7 @@ function Header() {
           <FaSearch className={styles.searchIcon} />
         </div>
 
-        <div className={styles.cart}>
+        <div onClick={() => setCartVisibility((prevState) => !prevState)} className={styles.cart}>
           <FaShoppingCart className={styles.cartIcon} />
           <span className={styles.cartCount}>{cart.length}</span>
         </div>

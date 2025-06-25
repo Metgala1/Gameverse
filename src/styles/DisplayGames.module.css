@@ -89,7 +89,6 @@
   transition: 0.3s ease;
 }
 
-/* Add to Cart = Green */
 .add {
   background-color: #28a745;
   color: white;
@@ -99,7 +98,6 @@
   background-color: #218838;
 }
 
-/* Remove from Cart = Red */
 .remove {
   background-color: #dc3545;
   color: white;
