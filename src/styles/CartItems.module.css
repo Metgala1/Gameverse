@@ -26,3 +26,16 @@
  .cartItem h2{
    font-size: 20px;
  }
+
+ @media screen and (max-width: 750px){
+  .cartItemsDiv{
+    width: 230px;
+    max-height: 60vh;
+    overflow-y: auto;
+    position: fixed;
+    top: 25%;
+    left: 45%;
+    z-index: 2;
+  }
+
+ }
