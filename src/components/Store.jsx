@@ -9,13 +9,12 @@ import CartItems from './CartItems';
 
 function Store() {
   const [navVisible, setNavVisible] = useState(false);
-  const { isMobile, cartVisibility, setCartVisibility } = useGameContext();
+  const { isMobile, cartVisibility} = useGameContext();
 
   return (
     <div className={styles.store}>
       <Header />
-      <div className={styles.flexStore}>
-        <div className={styles.storeContent}>
+       <div className={styles.welcome}>
           <h1>Welcome to the Game Store</h1>
           <p>Explore our collection of games!</p>
         </div>
@@ -25,7 +24,6 @@ function Store() {
           )}
           {!isMobile && <Navbar />}
           <DisplayGames />
-        </div>
         {cartVisibility ? <CartItems /> : null}
       </div>
       {!navVisible && (
