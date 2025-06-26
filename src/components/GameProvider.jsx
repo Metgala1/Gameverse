@@ -11,7 +11,7 @@ const GameProvider = ({ children }) => {
   const { isMobile } = useCheckScreen(768);
   const [selectedGenre, setSelectedGenre] = useState('action');
   const [cart, setCart] = useState([]);
-  const [cartVisibility, setCartVisibility] = useState(false)
+  const [cartVisibility, setCartVisibility] = useState(false);
 
   function addToCart(gameItem) {
     setCart((prevCart) => {
@@ -44,7 +44,8 @@ const GameProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         cartVisibility,
-        setCartVisibility
+        setCartVisibility,
+        setCart,
       }}
     >
       {children}

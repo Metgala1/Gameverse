@@ -31,7 +31,10 @@ function Header() {
           <FaSearch className={styles.searchIcon} />
         </div>
 
-        <div onClick={() => setCartVisibility((prevState) => !prevState)} className={styles.cart}>
+        <div
+          onClick={() => setCartVisibility((prevState) => !prevState)}
+          className={styles.cart}
+        >
           <FaShoppingCart className={styles.cartIcon} />
           <span className={styles.cartCount}>{cart.length}</span>
         </div>
