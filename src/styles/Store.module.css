@@ -4,7 +4,9 @@
   padding: 1rem;
   background-color: black;
   width: 100%;
-  position: static;
+  position: sticky;
+  top: 69px;
+  z-index: 1;
 
 
 }
