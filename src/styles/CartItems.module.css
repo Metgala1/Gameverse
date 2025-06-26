@@ -19,6 +19,15 @@
   display: flex;
   border-radius: 10px;
 }
+.cartitemcontainer{
+  display: flex;
+}
+.cartitemcontainer button{
+  margin-left: auto;
+  border: none;
+   background: rgba(255, 255, 255, 0.1);
+   
+}
 
 .cartItem {
   color: black;

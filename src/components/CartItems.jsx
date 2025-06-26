@@ -2,7 +2,7 @@ import { useGameContext } from './GameContext';
 import styles from '../styles/CartItems.module.css';
 
 function CartItems() {
-  const { cart, setCart, setCartVisibility } = useGameContext();
+  const { cart, setCart, setCartVisibility, removeFromCart } = useGameContext();
   console.log(cart);
 
   return (
@@ -16,7 +16,9 @@ function CartItems() {
       <div className={styles.itemsContainer}>
         {cart.map((item) => (
           <div id={item.id} className={styles.cartItem}>
-            <h2>{item.name}</h2>
+            <div className={styles.cartitemcontainer}>
+                <h2>{item.name}</h2>
+            <button onClick={() => removeFromCart(item) } className={styles.removeItemBtn}>X</button></div>
              <hr />
           </div>
         ))}
