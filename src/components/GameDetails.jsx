@@ -5,13 +5,16 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import useGameDetails from '../hooks/GetGameDetails'
 import { useGameContext } from './GameContext';
+import Header from './Header';
 
 function GameDetails() {
   const { id } = useParams();
   const { myGame, loading, error } = useGameDetails(id);
-  const {game} = useGameContext()
+  const {game, cart, addToCart, removeFromCart} = useGameContext()
   const navigate = useNavigate();
   const [image, setImage] = useState(0);
+
+  console.log(myGame)
 
   const selectedGame = game.find((g) => g.id === parseInt(id))
   const screenShots = selectedGame.short_screenshots || [];
@@ -22,6 +25,7 @@ function GameDetails() {
 
   return (
     <div className={styles.gamedetailDiv}>
+        <Header />
       <div className={styles.gameName}>
         <button
           onClick={() => navigate(-1)}
@@ -29,7 +33,7 @@ function GameDetails() {
             background: 'none',
             border: 'none',
             color: 'white',
-            fontSize: '1.5rem',
+            fontSize: '1.2rem',
             cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
@@ -65,7 +69,13 @@ function GameDetails() {
       </div>
       <div className={styles.cartinfo}>
         <p className={styles.price}>$40</p>
-        <p className={styles.addtocart}>Add To Cart</p>
+        <p onClick={() =>
+                    cart.some((g) => g.id === myGame.id)
+                      ? removeFromCart(myGame)
+                      : addToCart(myGame)
+                  } className={cart.some((g) => g.id === myGame.id) ? styles.red : styles.green}>{cart.some((g) => g.id === myGame.id)
+                    ? 'Remove from Cart'
+                    : 'Add to Cart'}</p>
       </div>
       <div className={styles.descritiondiv}>
         <h2>Description</h2>
@@ -74,6 +84,16 @@ function GameDetails() {
         >
 
         </div>
+      </div>
+      <div className={styles.moreinfodiv}>
+        <p>Wbsite:<a href={myGame.website}>{myGame.website}</a></p>
+        <p>Released: {myGame.released}</p>
+        <p>Genre: {myGame.genres[0].name}</p>
+        <p>
+  {myGame.platforms.map((p) => p.platform.name).join(', ')}
+</p>
+        <p>Developers: {myGame.developers[0].name}</p>
+        <p>Publishers: {myGame.publishers[0].name}</p>
       </div>
     </div>
   );

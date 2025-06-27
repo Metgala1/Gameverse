@@ -1,15 +1,19 @@
 .gamedetailDiv {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgb(15, 16, 17);
   color: white;
   width: 100%;
   min-height: 100vh;
 }
 .gameName {
   display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .gameName h2 {
   margin-left: auto;
+  font-size: 1.2rem;
 }
 .imgslider {
   width: 90%;
@@ -43,6 +47,9 @@ svg {
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 50%;
 }
+.descritiondiv h2{
+    margin-bottom: 1rem;
+}
 .active {
   background-color: aqua;
   display: block;
@@ -55,15 +62,20 @@ svg {
     display: flex;
     margin: auto;
     margin-top: 1.5rem;
-    background-color: rgba(48, 45, 45, 0.616);
-    padding: 0.5rem;
+    background: linear-gradient(to right, rgb(15, 16, 17), rgb(37, 37, 37));
+    padding: 0.7rem;
     border-radius: 10px;
     font-size: 1.1rem;
 
 
 }
-.addtocart{
+.red{
     margin-left: auto;
+    color: red;
+}
+.green{
+    margin-left: auto;
+    color: green;
 }
 .descritiondiv{
     width: 90%;
@@ -71,8 +83,143 @@ svg {
     margin-top: 1.5rem;
     max-height: 200px;
     overflow: auto;
-    
     border-radius: 10px;
     padding: 1rem;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgb(37, 37, 37);
+}
+.moreinfodiv{
+    width: 80%;
+    color: linen;
+    margin: auto;
+    margin-top: 1rem;
+    padding-bottom: 2rem;
+    background: linear-gradient(to right, rgb(15, 16, 17), rgb(37, 37, 37));
+    border-radius: 10px;
+}
+
+/*Header styling*/
+.headerContainer {
+  width: 100%;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px) saturate(180%);
+}
+.headerLogoDiv {
+  width: 50px;
+  height: 50px;
+}
+.headerLogoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.storeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem 2rem;
+  background-color: rgba(20, 20, 40, 0.9);
+  border-bottom: 1px solid #00f0ff;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #d400ff;
+  cursor: pointer;
+}
+
+.searchBar {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 1.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.cartIcon {
+  font-size: 1.5rem;
+  color: #00f0ff;
+}
+
+.cartCount {
+  background-color: #d400ff;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.8rem;
+}
+
+.searchWrapper {
+  position: relative;
+  width: 300px;
+}
+
+.searchBar {
+  width: 100%;
+  padding: 10px 40px 10px 15px; /* space for icon on right */
+  border: 2px solid #d400ff;
+  border-radius: 20px;
+  font-size: 16px;
+  background-color: white;
+  color: #fff;
+  outline: none;
+  transition:
+    width 0.9s ease,
+    box-shadow 0.9s ease,
+    border-color 0.9s ease;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #d400ff;
+  pointer-events: none;
+  font-size: 16px;
+}
+.searchBar:focus {
+  width: 110%; /* slightly expand */
+  box-shadow:
+    0 0 10px #d400ff,
+    0 0 20px #00f0ff;
+  border-color: #00f0ff;
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+  .searchBar {
+    max-width: 200px;
+    max-height: 2rem;
+  }
+  .headerContainer {
+    position: sticky;
+    top: 0;
+  }
 }
