@@ -45,6 +45,7 @@
   font-weight: 900;
   border-bottom: 2px solid black;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .closeBtn {

@@ -67,7 +67,7 @@ function GameDetails() {
         <p className={styles.price}>$40</p>
         <p className={styles.addtocart}>Add To Cart</p>
       </div>
-      <div className={styles.descritionDv}>
+      <div className={styles.descritiondiv}>
         <h2>Description</h2>
         <div className={styles.description}
          dangerouslySetInnerHTML={{ __html: myGame.description }}

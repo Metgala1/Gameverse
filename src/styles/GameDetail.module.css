@@ -1,5 +1,5 @@
 .gamedetailDiv {
-  background-color: rgba(0, 0, 0, 0.842);
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   width: 100%;
   min-height: 100vh;
@@ -64,4 +64,15 @@ svg {
 }
 .addtocart{
     margin-left: auto;
+}
+.descritiondiv{
+    width: 90%;
+    margin: auto;
+    margin-top: 1.5rem;
+    max-height: 200px;
+    overflow: auto;
+    
+    border-radius: 10px;
+    padding: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
