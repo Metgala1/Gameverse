@@ -30,7 +30,7 @@ function GameDetails() {
         <button
           onClick={() => navigate(-1)}
           style={{
-            background: 'none',
+            background: 'none', 
             border: 'none',
             color: 'white',
             fontSize: '1.2rem',
