@@ -39,6 +39,16 @@
 .itemsContainer h2 {
   font-size: 16px;
 }
+.cartDes{
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(to right, #d400ff, #00f0ff);
+  font-weight: 900;
+  border-bottom: 2px solid black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+}
 .closeBtn {
   position: sticky;
   top: 0.5rem;
@@ -49,6 +59,8 @@
   text-align: center;
   background: rgba(255, 255, 255, 0.1);
   border: none;
+  font-weight: 900;
+  text-align: center;
 }
 .itemsContainer {
   width: 100%;
@@ -56,7 +68,7 @@
 }
 hr{
   height: 1px;
-  border: 1px solid violet;
+  border: 1px solid neon;
 }
 
 @media screen and (max-width: 750px) {
@@ -74,5 +86,6 @@ hr{
     border-radius: 10px;
     border: none;
     background-color: violet;
+    margin-top: auto;
   }
 }
