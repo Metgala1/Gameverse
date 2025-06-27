@@ -48,15 +48,13 @@ function GameDetails() {
         >
           <image href={screenShots[image].image} width="100%" height="100%" />
         </svg>
-        <div className={styles.navigation}>
-          <div onClick={() => setImage(0)}></div>
-          <div onClick={() => setImage(1)}></div>
-          <div onClick={() => setImage(2)}></div>
-          <div onClick={() => setImage(3)}></div>
-          <div onClick={() => setImage(4)}></div>
-          <div onClick={() => setImage(5)}></div>
-          <div onClick={() => setImage(6)}></div>
-        </div>
+          <div className={styles.navigation}>
+            {[0, 1, 2, 3, 4, 5, 6].map((index) => (
+              <div key={index} onClick={() => setImage(index)}
+              className={index === image ? styles.active : styles.navigationdivs}
+              ></div>
+            ))}
+          </div>
       </div>
     </div>
   );

@@ -31,17 +31,22 @@ svg {
   position: absolute;
   bottom: 5%;
   left: 15%;
-   background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   padding: 0.5rem;
   border-radius: 10px;
-
-  
 }
 
-.navigation div {
+.navigationdivs {
   width: 15px;
   height: 15px;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 50%;
+}
+.active {
+  background-color: aqua;
+  display: block;
+   width: 15px;
+  height: 15px;
+   border-radius: 50%;
 }
