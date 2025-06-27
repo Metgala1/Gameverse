@@ -1,21 +1,24 @@
 import { useParams } from 'react-router-dom';
-import { useGameContext } from './GameContext';
 import styles from '../styles/GameDetail.module.css';
 import { HiArrowLeft } from 'react-icons/hi';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import useGameDetails from '../hooks/GetGameDetails'
+import { useGameContext } from './GameContext';
 
 function GameDetails() {
   const { id } = useParams();
-  const { game } = useGameContext(); // or games — depends on your state name
+  const { myGame, loading, error } = useGameDetails(id);
+  const {game} = useGameContext()
   const navigate = useNavigate();
   const [image, setImage] = useState(0);
 
-  const selectedGame = game.find((g) => g.id === parseInt(id)); // parse ID to number
-  const screenShots = selectedGame.short_screenshots;
-  console.log(screenShots);
+  const selectedGame = game.find((g) => g.id === parseInt(id))
+  const screenShots = selectedGame.short_screenshots || [];
 
-  if (!selectedGame) return <p>Game not found.</p>;
+  
+  if(loading) return <p>Loading...</p>
+  if(error || !myGame) return <p>Fail to fetch game</p>
 
   return (
     <div className={styles.gamedetailDiv}>
@@ -36,7 +39,7 @@ function GameDetails() {
           <HiArrowLeft />
           GameVerse
         </button>
-        <h2>{selectedGame.name}</h2>
+        <h2>{myGame.name}</h2>
       </div>
       <div className={styles.imgslider}>
         <svg
@@ -48,13 +51,29 @@ function GameDetails() {
         >
           <image href={screenShots[image].image} width="100%" height="100%" />
         </svg>
-          <div className={styles.navigation}>
-            {[0, 1, 2, 3, 4, 5, 6].map((index) => (
-              <div key={index} onClick={() => setImage(index)}
-              className={index === image ? styles.active : styles.navigationdivs}
-              ></div>
-            ))}
-          </div>
+        <div className={styles.navigation}>
+          {[0, 1, 2, 3, 4, 5, 6].map((index) => (
+            <div
+              key={index}
+              onClick={() => setImage(index)}
+              className={
+                index === image ? styles.active : styles.navigationdivs
+              }
+            ></div>
+          ))}
+        </div>
+      </div>
+      <div className={styles.cartinfo}>
+        <p className={styles.price}>$40</p>
+        <p className={styles.addtocart}>Add To Cart</p>
+      </div>
+      <div className={styles.descritionDv}>
+        <h2>Description</h2>
+        <div className={styles.description}
+         dangerouslySetInnerHTML={{ __html: myGame.description }}
+        >
+
+        </div>
       </div>
     </div>
   );
