@@ -1,6 +1,6 @@
 import { useGameContext } from './GameContext';
 import styles from '../styles/DisplayGames.module.css';
-
+import { Link } from 'react-router-dom';
 function DisplayGames() {
   const {
     game,
@@ -26,42 +26,51 @@ function DisplayGames() {
 
       <div className={styles.gamelist}>
         {myGame.map((item) => (
-          <div
-            key={item.id}
-            className={`${styles.gameItem} ${isMobile ? styles.mobile : ''}`}
+          <Link
+            to={`/game/${item.id}`}
+            style={{ textDecoration: 'none', color: 'inherit' }}
           >
-            <svg
-              className={styles.gameImg}
-              width="100%"
-              height="100%"
-              viewBox="0 0 320 160"
-              preserveAspectRatio="xMidYMid slice"
+            <div
+              key={item.id}
+              className={`${styles.gameItem} ${isMobile ? styles.mobile : ''}`}
             >
-              <image href={item.background_image} width="100%" height="100%" />
-            </svg>
-            <div className={styles.gameinfo}>
-              <h3>{item.name}</h3>
-              <p>Rating: {item.rating}</p>
-              <p>Released Date: {item.released}</p>
-              <p>Playtime: {item.playtime} hours</p>
-              <button
-                className={`${styles.cartBtn} ${
-                  cart.some((g) => g.id === item.id)
-                    ? styles.remove
-                    : styles.add
-                }`}
-                onClick={() =>
-                  cart.some((g) => g.id === item.id)
-                    ? removeFromCart(item)
-                    : addToCart(item)
-                }
+              <svg
+                className={styles.gameImg}
+                width="100%"
+                height="100%"
+                viewBox="0 0 320 160"
+                preserveAspectRatio="xMidYMid slice"
               >
-                {cart.some((g) => g.id === item.id)
-                  ? 'Remove from Cart'
-                  : 'Add to Cart'}
-              </button>
+                <image
+                  href={item.background_image}
+                  width="100%"
+                  height="100%"
+                />
+              </svg>
+              <div className={styles.gameinfo}>
+                <h3>{item.name}</h3>
+                <p>Rating: {item.rating}</p>
+                <p>Released Date: {item.released}</p>
+                <p>Playtime: {item.playtime} hours</p>
+                <button
+                  className={`${styles.cartBtn} ${
+                    cart.some((g) => g.id === item.id)
+                      ? styles.remove
+                      : styles.add
+                  }`}
+                  onClick={() =>
+                    cart.some((g) => g.id === item.id)
+                      ? removeFromCart(item)
+                      : addToCart(item)
+                  }
+                >
+                  {cart.some((g) => g.id === item.id)
+                    ? 'Remove from Cart'
+                    : 'Add to Cart'}
+                </button>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

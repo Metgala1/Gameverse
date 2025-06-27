@@ -19,14 +19,13 @@
   display: flex;
   border-radius: 10px;
 }
-.cartitemcontainer{
+.cartitemcontainer {
   display: flex;
 }
-.cartitemcontainer button{
+.cartitemcontainer button {
   margin-left: auto;
   border: none;
-   background: rgba(255, 255, 255, 0.1);
-   
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .cartItem {
@@ -39,7 +38,7 @@
 .itemsContainer h2 {
   font-size: 16px;
 }
-.cartDes{
+.cartDes {
   width: 100%;
   text-align: center;
   background: linear-gradient(to right, #d400ff, #00f0ff);
@@ -47,7 +46,6 @@
   border-bottom: 2px solid black;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
 }
 .closeBtn {
   position: sticky;
@@ -66,7 +64,7 @@
   width: 100%;
   padding-right: 0.5rem;
 }
-hr{
+hr {
   height: 1px;
   border: 1px solid neon;
 }

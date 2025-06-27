@@ -1,0 +1,47 @@
+.gamedetailDiv {
+  background-color: rgba(0, 0, 0, 0.842);
+  color: white;
+  width: 100%;
+  height: 100%;
+}
+.gameName {
+  display: flex;
+}
+
+.gameName h2 {
+  margin-left: auto;
+}
+.imgslider {
+  width: 90%;
+  height: 400px;
+  margin: auto;
+  margin-top: 1rem;
+  border-radius: 20px;
+  position: relative;
+}
+svg {
+  border-radius: 20px;
+}
+.navigation {
+  width: 70%;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-evenly;
+  margin: auto;
+  position: absolute;
+  bottom: 5%;
+  left: 15%;
+   background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem;
+  border-radius: 10px;
+
+  
+}
+
+.navigation div {
+  width: 15px;
+  height: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+}
