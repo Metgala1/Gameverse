@@ -95,6 +95,10 @@ svg {
     padding-bottom: 2rem;
     background: linear-gradient(to right, rgb(15, 16, 17), rgb(37, 37, 37));
     border-radius: 10px;
+    overflow: auto;
+    word-wrap: break-word;     /* Break long words if needed */
+  overflow-wrap: break-word; /* Modern equivalent, better supported */
+  white-space: normal;
 }
 
 /*Header styling*/
