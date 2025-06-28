@@ -31,6 +31,7 @@ function Navbar({ navVisible, setNavVisible }) {
     setSelectedGenre,
     setSelectedPlatform,
     setSelectedSort,
+    isMobile
   } = useGameContext();
 
   const handleNavClick = (category, title) => {
@@ -53,12 +54,14 @@ function Navbar({ navVisible, setNavVisible }) {
 
   return (
     <div className={styles.navbar}>
-      <button
+      {isMobile && (
+        <button
         onClick={() => setNavVisible(!navVisible)}
         className={styles.closeBtn}
       >
         {'X'}
       </button>
+      )}
       <ul>
         {navItems.map((item, index) => (
           <li key={index} className={styles.navitem}>

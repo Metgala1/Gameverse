@@ -26,11 +26,10 @@ function Store() {
         <DisplayGames />
         {cartVisibility ? <CartItems /> : null}
       </div>
-      {!navVisible && (
-        <button
+      {!navVisible && isMobile &&(
+         <button
           onClick={() => setNavVisible(!navVisible)}
           className={styles.toggleNav}
-          type="button"
         >
           <HiMenu className={styles.hamburger} />
         </button>

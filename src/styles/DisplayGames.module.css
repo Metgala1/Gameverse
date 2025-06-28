@@ -27,7 +27,6 @@
   background: rgba(255, 255, 255, 0.1);
   border-radius: var(--border-radius);
   overflow: hidden;
-  box-shadow: var(--shadow-neon);
   transition: var(--transition);
   cursor: pointer;
   position: relative;
@@ -52,6 +51,7 @@
 .gameinfo h3 {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
+  color: white;
 }
 
 .gameinfo p {

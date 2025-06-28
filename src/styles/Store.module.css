@@ -16,7 +16,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-dark);
 }
 
 .welcome {
@@ -30,13 +29,13 @@
 
 .welcome h1 {
   font-size: 2rem;
-  color: var(--neon-magenta);
   font-family: 'Orbitron', sans-serif;
+  color: white;
 }
 
 .welcome p {
   font-size: 1rem;
-  color: var(--text-secondary);
+  color: white;
 }
 
 .navandgamediv {
@@ -77,7 +76,7 @@
 
 @media screen and (max-width: 750px) {
   .welcome {
-    padding: 0.5rem;
+    padding: 0rem;
   }
   .welcome h1 {
     font-size: 1.5rem;
