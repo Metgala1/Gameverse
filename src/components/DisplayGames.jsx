@@ -74,22 +74,25 @@ function DisplayGames() {
                 <p>Rating: {item.rating}</p>
                 <p>Released Date: {item.released}</p>
                 <p>Playtime: {item.playtime} hours</p>
-                <button
-                  className={`${styles.cartBtn} ${
-                    cart.some((g) => g.id === item.id)
-                      ? styles.remove
-                      : styles.add
-                  }`}
-                  onClick={() =>
-                    cart.some((g) => g.id === item.id)
-                      ? removeFromCart(item)
-                      : addToCart(item)
-                  }
-                >
-                  {cart.some((g) => g.id === item.id)
-                    ? 'Remove from Cart'
-                    : 'Add to Cart'}
-                </button>
+               <button
+  className={`${styles.cartBtn} ${
+    cart.some((g) => g.id === item.id)
+      ? styles.remove
+      : styles.add
+  }`}
+  onClick={(e) => {
+    e.stopPropagation(); // 🛑 Prevent the link from activating
+    e.preventDefault();  // 🛑 Prevent navigation from button click
+
+    cart.some((g) => g.id === item.id)
+      ? removeFromCart(item)
+      : addToCart(item);
+  }}
+>
+  {cart.some((g) => g.id === item.id)
+    ? 'Remove from Cart'
+    : 'Add to Cart'}
+</button>
               </div>
             </div>
           </Link>
