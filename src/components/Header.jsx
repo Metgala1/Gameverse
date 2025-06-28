@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { useGameContext } from './GameContext';
 
 function Header() {
-  const { isMobile, cart, setCartVisibility } = useGameContext();
+  const { isMobile, cart, setCartVisibility, search, setSearch } = useGameContext();
+  
 
   return (
     <div className={styles.headerContainer}>
@@ -27,6 +28,8 @@ function Header() {
             type="text"
             placeholder="Search for a game..."
             className={styles.searchBar}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
           />
           <FaSearch className={styles.searchIcon} />
         </div>

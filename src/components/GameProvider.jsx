@@ -12,6 +12,9 @@ const GameProvider = ({ children }) => {
   const [selectedGenre, setSelectedGenre] = useState('action');
   const [cart, setCart] = useState([]);
   const [cartVisibility, setCartVisibility] = useState(false);
+  const [search, setSearch] = useState('');
+  const [selectedPlatform, setSelectedPlatform] = useState('');
+  const [selectedSort, setSelectedSort] = useState('');
 
   function addToCart(gameItem) {
     setCart((prevCart) => {
@@ -46,6 +49,12 @@ const GameProvider = ({ children }) => {
         cartVisibility,
         setCartVisibility,
         setCart,
+        search,
+        setSearch,
+        selectedPlatform,
+  selectedSort,
+  setSelectedPlatform,
+  setSelectedSort,
       }}
     >
       {children}

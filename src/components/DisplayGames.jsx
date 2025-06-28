@@ -1,6 +1,7 @@
 import { useGameContext } from './GameContext';
 import styles from '../styles/DisplayGames.module.css';
 import { Link } from 'react-router-dom';
+
 function DisplayGames() {
   const {
     game,
@@ -11,11 +12,30 @@ function DisplayGames() {
     cart,
     addToCart,
     removeFromCart,
+    search,
+    selectedPlatform,
+    selectedSort
   } = useGameContext();
 
-  const myGame = game
-    ? game.filter((g) => g.genres.some((genre) => genre.slug === selectedGenre))
-    : [];
+ const filteredGames = game
+  ? game
+      .filter((g) =>
+        selectedGenre
+          ? g.genres?.some((genre) => genre.slug === selectedGenre)
+          : true
+      )
+      .filter((g) =>
+        selectedPlatform
+          ? g.platforms?.some((p) => p.platform.slug === selectedPlatform)
+          : true
+      )
+      .filter((g) =>
+        search.trim()
+          ? g.name.toLowerCase().includes(search.toLowerCase())
+          : true
+      )
+      .sort((a, b) => (selectedSort === 'top' ? b.rating - a.rating : 0))
+  : [];
 
   return (
     <div className={styles.gamesContainer}>
@@ -25,14 +45,16 @@ function DisplayGames() {
       )}
 
       <div className={styles.gamelist}>
-        {myGame.map((item) => (
+        {filteredGames.map((item) => (
           <Link
             to={`/game/${item.id}`}
             style={{ textDecoration: 'none', color: 'inherit' }}
+            key={item.id}
           >
             <div
-              key={item.id}
-              className={`${styles.gameItem} ${isMobile ? styles.mobile : ''}`}
+              className={`${styles.gameItem} ${
+                isMobile ? styles.mobile : ''
+              }`}
             >
               <svg
                 className={styles.gameImg}
@@ -72,9 +94,13 @@ function DisplayGames() {
             </div>
           </Link>
         ))}
+        {filteredGames.length === 0 && (
+          <p className={styles.error}>No games matched your search.</p>
+        )}
       </div>
     </div>
   );
 }
 
 export default DisplayGames;
+
