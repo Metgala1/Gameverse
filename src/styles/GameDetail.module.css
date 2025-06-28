@@ -1,227 +1,162 @@
+/* GameDetail.module.css */
+:root {
+  --neon-cyan: #00f0ff;
+  --neon-magenta: #d400ff;
+  --bg-dark: #0f1011;
+  --bg-secondary: #252525;
+  --text-light: #ffffff;
+  --text-secondary: #aaaaaa;
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+  --shadow-neon: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-magenta);
+  --font-orbitron: 'Orbitron', sans-serif;
+}
+
 .gamedetailDiv {
-  background-color: rgb(15, 16, 17);
-  color: white;
   width: 100%;
   min-height: 100vh;
+  background-color: var(--bg-dark);
+  padding-bottom: 2rem;
 }
+
 .gameName {
   display: flex;
-  margin-top: 1rem;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
 }
+
 .gameName h2 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  color: var(--neon-magenta);
+  font-family: var(--font-orbitron);
 }
+
+.gameName button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
 .imgslider {
   width: 90%;
+  max-width: 800px;
   height: 400px;
-  margin: auto;
-  margin-top: 1rem;
-  border-radius: 20px;
+  margin: 1rem auto;
+  border-radius: var(--border-radius);
   position: relative;
-}
-svg {
-  border-radius: 20px;
-}
-.navigation {
-  width: 70%;
-  display: flex;
-  gap: 0.5rem;
-  justify-content: space-evenly;
-  margin: auto;
-  position: absolute;
-  bottom: 5%;
-  left: 15%;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  padding: 0.5rem;
-  border-radius: 10px;
+  overflow: hidden;
 }
 
-.navigationdivs {
-  width: 15px;
-  height: 15px;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-}
-.descritiondiv h2{
-    margin-bottom: 1rem;
-}
-.active {
-  background-color: aqua;
-  display: block;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-}
-.cartinfo{
-    width: 80%;
-    display: flex;
-    margin: auto;
-    margin-top: 1.5rem;
-    background: linear-gradient(to right, rgb(15, 16, 17), rgb(37, 37, 37));
-    padding: 0.7rem;
-    border-radius: 10px;
-    font-size: 1.1rem;
-
-
-}
-.red{
-    margin-left: auto;
-    color: red;
-}
-.green{
-    margin-left: auto;
-    color: green;
-}
-.descritiondiv{
-    width: 90%;
-    margin: auto;
-    margin-top: 1.5rem;
-    max-height: 200px;
-    overflow: auto;
-    border-radius: 10px;
-    padding: 1rem;
-    background: rgb(37, 37, 37);
-}
-.moreinfodiv{
-    width: 80%;
-    color: linen;
-    margin: auto;
-    margin-top: 1rem;
-    padding-bottom: 2rem;
-    background: linear-gradient(to right, rgb(15, 16, 17), rgb(37, 37, 37));
-    border-radius: 10px;
-    overflow: auto;
-    word-wrap: break-word;     /* Break long words if needed */
-  overflow-wrap: break-word; /* Modern equivalent, better supported */
-  white-space: normal;
-}
-
-/*Header styling*/
-.headerContainer {
-  width: 100%;
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px) saturate(180%);
-}
-.headerLogoDiv {
-  width: 50px;
-  height: 50px;
-}
-.headerLogoImg {
+.gameImg {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-.logoContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
+  border-radius: var(--border-radius);
 }
 
-.storeHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 1rem 2rem;
-  background-color: rgba(20, 20, 40, 0.9);
-  border-bottom: 1px solid #00f0ff;
-}
-
-.logo {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #d400ff;
-  cursor: pointer;
-}
-
-.searchBar {
-  flex: 1;
-  max-width: 400px;
-  margin: 0 1.5rem;
-  padding: 0.6rem 1rem;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-}
-
-.cart {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-}
-
-.cartIcon {
-  font-size: 1.5rem;
-  color: #00f0ff;
-}
-
-.cartCount {
-  background-color: #d400ff;
-  color: white;
-  border-radius: 50%;
-  padding: 0.2rem 0.6rem;
-  font-size: 0.8rem;
-}
-
-.searchWrapper {
-  position: relative;
-  width: 300px;
-}
-
-.searchBar {
-  width: 100%;
-  padding: 10px 40px 10px 15px; /* space for icon on right */
-  border: 2px solid #d400ff;
-  border-radius: 20px;
-  font-size: 16px;
-  background-color: white;
-  color: #fff;
-  outline: none;
-  transition:
-    width 0.9s ease,
-    box-shadow 0.9s ease,
-    border-color 0.9s ease;
-}
-
-.searchIcon {
+.navigation {
   position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #d400ff;
-  pointer-events: none;
-  font-size: 16px;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  background:Jun rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
 }
-.searchBar:focus {
-  width: 110%; /* slightly expand */
-  box-shadow:
-    0 0 10px #d400ff,
-    0 0 20px #00f0ff;
-  border-color: #00f0ff;
+
+.navigationdivs,
+.active {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.active {
+  background-color: var(--neon-cyan);
+}
+
+.cartinfo {
+  width: 90%;
+  max-width: 800px;
+  margin: 1.5rem auto;
+  padding: 1rem;
+  background: linear-gradient(to right, var(--bg-dark), var(--bg-secondary));
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.price {
+  font-size: 1.2rem;
+  color: var(--neon-cyan);
+}
+
+.red {
+  color: #dc3545;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.green {
+  color: #28a745;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.descritiondiv {
+  width: 90%;
+  max-width: 800px;
+  margin: 1.5rem auto;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.descritiondiv h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-orbitron);
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.moreinfodiv {
+  width: 90%;
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 1rem;
+  background: linear-gradient(to right, var(--bg-dark), var(--bg-secondary));
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  overflow-wrap: break-word;
 }
 
 @media screen and (max-width: 768px) {
-  .logo {
-    font-size: 1.5rem;
+  .imgslider {
+    height: 250px;
   }
-  .searchBar {
-    max-width: 200px;
-    max-height: 2rem;
+  .gameName h2 {
+    font-size: 1.2rem;
   }
-  .headerContainer {
-    position: sticky;
-    top: 0;
+  .descritiondiv {
+    max-height: 150px;
   }
 }

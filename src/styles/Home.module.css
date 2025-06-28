@@ -1,3 +1,18 @@
+/* Home.module.css */
+:root {
+  --neon-cyan: #00f0ff;
+  --neon-magenta: #d400ff;
+  --bg-dark: #0f1011;
+  --bg-secondary: #252525;
+  --text-light: #ffffff;
+  --text-secondary: #aaaaaa;
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+  --shadow-neon: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-magenta);
+  --font-orbitron: 'Orbitron', sans-serif;
+  --font-press-start: 'Press Start 2P', cursive;
+}
+
 .homeDiv {
   width: 100%;
   min-height: 100vh;
@@ -5,169 +20,101 @@
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  padding-bottom: 10rem;
 }
 
 .heroSection {
-  width: 100%;
   max-width: 1200px;
   display: flex;
   flex-direction: column;
-  gap: 10rem;
-  color: #fff;
+  gap: 4rem;
 }
 
-/* Intro section */
 .firstDiv {
   text-align: center;
   padding: 2rem;
 }
 
-/* Button */
-.gameVersButton {
-  padding: 12px 30px;
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-  background: linear-gradient(90deg, #00f0ff, #d400ff);
-  border: 2px solid transparent;
-  border-radius: 12px;
-  text-shadow: 0 0 10px #00f0ff;
-  box-shadow:
-    0 0 10px #00f0ff,
-    0 0 10px #d400ff,
-    0 0 20px #d400ff,
-    0 0 20px #d400ff;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  cursor: pointer;
-  margin-top: 1rem;
-}
-
-.gameVersButton:hover {
-  transform: scale(1.05);
-  box-shadow:
-    0 0 20px #00f0ff,
-    0 0 20px #d400ff,
-    0 0 40px #d400ff;
-}
-
-/* Section titles */
 .gameversetitle {
-  font-size: 48px;
+  font-size: 2.5rem;
   font-weight: 900;
-  color: #d400ff;
+  color: var(--neon-magenta);
   text-transform: uppercase;
-  font-family: 'Orbitron', sans-serif;
-  margin-bottom: 1rem;
-  font-family: 'Orbitron', sans-serif;
+  font-family: var(--font-orbitron);
 }
 
-/* Games container */
-.secondDiv {
-  text-align: center;
+.gameVersButton {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--text-light);
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-neon);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.game HCIButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-magenta);
 }
 
 .hottestgamecontainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 1.5rem;
 }
 
-/* Game card */
 .gamecard {
-  position: relative;
-  background-color: rgba(10, 10, 30, 0.85);
-  border-radius: 20px;
-  overflow: hidden;
+  background: rgba(10, 10, 30, 0.85);
+  border-radius: var(--border-radius);
   width: 240px;
-  height: auto;
-  padding-bottom: 10px;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  box-shadow:
-    0 0 12px rgba(0, 255, 255, 0.2),
-    0 0 30px rgba(212, 0, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  font-family: 'Press Start 2P', cursive;
-  font-size: 12px;
-  color: #00f0ff;
-}
-
-.gamecard::before,
-.gamecard::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  z-index: 2;
-}
-
-.gamecard::before {
-  top: -8px;
-  left: -8px;
-  background: radial-gradient(circle, #00f0ff 0%, transparent 70%);
-  box-shadow: 0 0 20px #00f0ff;
-}
-
-.gamecard::after {
-  bottom: -8px;
-  right: -8px;
-  background: radial-gradient(circle, #d400ff 0%, transparent 70%);
-  box-shadow: 0 0 20px #d400ff;
+  overflow: hidden;
+  box-shadow: var(--shadow-neon);
+  transition: var(--transition);
+  font-family: var(--font-press-start);
+  font-size: 0.75rem;
+  position: relative;
 }
 
 .gamecard:hover {
   transform: scale(1.05);
-  box-shadow:
-    0 0 25px rgba(0, 255, 255, 0.4),
-    0 0 40px rgba(212, 0, 255, 0.35),
-    inset 0 0 15px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-magenta);
 }
 
 .homeImg {
   width: 100%;
   height: 160px;
-  object-fit: cover;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 .h2 {
-  font-size: 16px;
-  font-weight: 600;
-  margin: 1rem;
-  color: #fff;
+  font-size: 1rem;
+  margin: 0.75rem;
+  color: var(--text-light);
 }
-.homeDiv {
-  position: relative;
-  z-index: 1;
-}
+
 .logoDiv {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
 }
+
 .logoImg {
   width: 100%;
   height: auto;
   border-radius: 50%;
-  box-shadow:
-    0 0 10px rgba(0, 240, 255, 0.5),
-    0 0 20px rgba(212, 0, 255, 0.5);
-  transition: transform 0.3s ease;
+  box-shadow: var(--shadow-neon);
+  transition: var(--transition);
 }
+
 .logoImg:hover {
   transform: rotate(180deg);
-  box-shadow:
-    0 0 20px rgba(0, 240, 255, 0.7),
-    0 0 30px rgba(212, 0, 255, 0.7);
-  transition:
-    transform 0.9s ease-in-out,
-    box-shadow 0.9s ease;
+  box-shadow: 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-magenta);
 }
+
 .imgLogo {
   display: flex;
   justify-content: center;
@@ -175,32 +122,30 @@
   gap: 1rem;
 }
 
-/* Responsive */
 @media screen and (max-width: 768px) {
   .gameversetitle {
-    font-size: 36px;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
   }
-
   .gameVersButton {
-    padding: 10px 24px;
-    font-size: 16px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
-
   .gamecard {
-    width: 90%;
+    width: 100%;
+    max-width: 200px;
   }
-
   .homeImg {
-    height: 200px;
+    height: 140px;
   }
-
   .h2 {
-    font-size: 14px;
-  }
-  .firstDiv {
-    padding: 1rem;
+    font-size: 0.9rem;
   }
   .heroSection {
     gap: 2rem;
+  }
+  .firstDiv {
+    padding: 1rem;
   }
 }

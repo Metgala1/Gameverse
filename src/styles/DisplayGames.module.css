@@ -1,100 +1,78 @@
-/* Main container for game list */
-.store {
+/* DisplayGames.module.css */
+:root {
+  --neon-cyan: #00f0ff;
+  --neon-magenta: #d400ff;
+  --bg-dark: #0f1011;
+  --bg-secondary: #252525;
+  --text-light: #ffffff;
+  --text-secondary: #aaaaaa;
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+  --shadow-neon: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-magenta);
+}
+
+.gamesContainer {
   width: 100%;
-  max-height: 100vh;
-  background-color: red;
+  padding: 1rem;
 }
 
 .gamelist {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-  padding: 2rem;
-}
-.gamesContainer {
-  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
 }
 
-/* Game card */
 .gameItem {
-  background-color: #1c1c2b;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  color: white;
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
-  cursor: pointer;
-  width: 200px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  backdrop-filter: blur(12px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-neon);
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
 }
 
-.gameitem:hover {
+.gameItem:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0, 255, 255, 0.2);
-}
-
-/* Game image */
-.gameitem img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-}
-
-/* Game title */
-.gameitem h3 {
-  font-size: 1.1rem;
-  margin: 0.75rem 1rem 0.25rem;
-}
-
-/* Rating text */
-.gameitem p {
-  font-size: 0.9rem;
-  margin: 0 1rem 1rem;
-  color: #aaa;
-}
-
-/* Mobile-specific tweaks */
-.gameitem.mobile {
-  font-size: 0.95rem;
+  box-shadow: 0 0 20px var(--neon-cyan);
 }
 
 .gameImg {
-  width: 200px;
+  width: 100%;
   height: 160px;
-  object-fit: cover;
-  border-radius: 12px 12px 0 0;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
-.error,
-.loading {
-  color: white;
-  position: absolute;
-  top: 50%;
-  right: 30%;
-  left: 40%;
-}
+
 .gameinfo {
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   text-align: center;
 }
 
+.gameinfo h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.gameinfo p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
 .cartBtn {
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: var(--transition);
+  width: 100%;
 }
 
 .add {
   background-color: #28a745;
-  color: white;
+  color: var(--text-light);
 }
 
 .add:hover {
@@ -103,34 +81,81 @@
 
 .remove {
   background-color: #dc3545;
-  color: white;
+  color: var(--text-light);
 }
 
 .remove:hover {
   background-color: #c82333;
 }
 
+.error,
+.loading {
+  color: var(--text-light);
+  text-align: center;
+  margin: 2rem;
+  font-size: 1rem;
+}
+
+/* Full-Screen Loading Animation */
+.fullScreenLoader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--bg-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000; /* Above all other elements */
+  animation: fadeIn 0.3s ease-in;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid var(--neon-magenta);
+  border-top: 6px solid var(--neon-cyan);
+  border-radius: 50%;
+  animation: spin 1s linear infinite, pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: var(--shadow-neon); }
+  50% { box-shadow: 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-magenta); }
+}
+
 @media screen and (max-width: 600px) {
   .gamelist {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    padding: 1rem;
-  }
-
-  .gameitem img {
-    height: 120px;
-  }
-
-  .gameitem h3 {
-    font-size: 1rem;
-  }
-
-  .gameitem p {
-    font-size: 0.85rem;
+    grid-template-columns: repeat(2, 1fr); /* Forces exactly 2 columns */
+    gap: 1rem;
+    padding: 0.5rem;
   }
   .gameItem {
-    width: 180px;
+    width: 100%;
   }
-  .gameinfo {
-    font-size: 0.9rem;
+  .gameImg {
+    height: 120px;
+  }
+  .gameinfo h3 {
+    font-size: 1rem;
+  }
+  .gameinfo p {
+    font-size: 0.85rem;
+  }
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border-width: 5px;
   }
 }
