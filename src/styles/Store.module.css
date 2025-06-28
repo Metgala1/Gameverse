@@ -92,12 +92,11 @@
     overflow-y: auto;
   }
   .toggleNav {
-    bottom: 8rem; /* Adjusted for mobile */
-    left: 1rem;
+    bottom: 4rem; 
     width: 50px;
     height: 50px;
     font-size: 1.5rem;
-    background-color: var(--neon-magenta); /* Brighter color for visibility */
+    background-color: var(--neon-magenta); 
     box-shadow: 0 0 15px var(--neon-magenta), 0 0 25px var(--neon-cyan);
   }
   .hamburger {
