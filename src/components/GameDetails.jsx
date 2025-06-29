@@ -6,6 +6,7 @@ import { useState } from 'react';
 import useGameDetails from '../hooks/GetGameDetails'
 import { useGameContext } from './GameContext';
 import Header from './Header';
+import Loading from './Loading';
 
 function GameDetails() {
   const { id } = useParams();
@@ -20,7 +21,7 @@ function GameDetails() {
   const screenShots = selectedGame.short_screenshots || [];
 
   
-  if(loading) return <p>Loading...</p>
+  if(loading) return <Loading />
   if(error || !myGame) return <p>Fail to fetch game</p>
 
   return (
