@@ -87,10 +87,10 @@ function GameDetails() {
         </div>
       </div>
       <div className={styles.moreinfodiv}>
-        <p>Wbsite:<a href={myGame.website}>{myGame.website}</a></p>
+        <p>Website:{"  "}<a href={myGame.website}>{myGame.website}</a></p>
         <p>Released: {myGame.released}</p>
         <p>Genre: {myGame.genres[0].name}</p>
-        <p>
+        <p>Platforms:{" "}
   {myGame.platforms.map((p) => p.platform.name).join(', ')}
 </p>
         <p>Developers: {myGame.developers[0].name}</p>
