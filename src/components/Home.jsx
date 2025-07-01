@@ -1,9 +1,22 @@
+import { useEffect, useRef } from 'react';
 import styles from '../styles/Home.module.css';
 import { useGameContext } from './GameContext';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   const { game, loading, error, isMobile } = useGameContext();
+  const buttonRef = useRef(null)
+
+  useEffect(() => {
+    buttonRef.current.focus()
+    setTimeout(() => {
+      buttonRef.current.textContent = "CLICK HERE";
+       buttonRef.current.focus()
+      
+
+    },5000)
+
+  },[])
 
   const myFilterGames = game
     ? game.filter((g) =>
@@ -32,7 +45,7 @@ const Home = () => {
             <h1 className={styles.gameversetitle}>Welcome to GameVerse</h1>
           </div>
           <Link to={'store'}>
-            <button className={styles.gameVersButton} type="button">
+            <button ref={buttonRef} className={styles.gameVersButton} type="button">
               Enter the Gameverse
             </button>
           </Link>
